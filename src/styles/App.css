@@ -1,0 +1,39 @@
+:root {
+  --footer: #eee;
+  --banner: rgb(158, 190, 250);
+  --navy: rgb(20, 51, 107);
+}
+
+@font-face {
+  font-family: 'fugaz';
+  src: url('/FugazOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.app {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  height: 700px;
+  width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link {
+  font-weight: 600;
+  color: var(--banner);
+}
