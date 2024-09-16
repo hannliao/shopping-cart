@@ -22,7 +22,7 @@ main {
   flex: 1;
 }
 
-img {
+.home img {
   height: 700px;
   width: 100%;
   object-fit: cover;
@@ -36,4 +36,11 @@ a {
 .link {
   font-weight: 600;
   color: var(--banner);
+}
+
+.products {
+  margin: 50px 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
