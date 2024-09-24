@@ -1,12 +1,24 @@
-import getProducts from './api.js';
 import Card from './Card.jsx';
+import useProducts from './useProducts';
 
-const products = await getProducts();
+const Shop = ({ filterList, category }) => {
+  const { products, loading, error } = useProducts(filterList);
 
-const Shop = () => {
+  if (loading) {
+    return <div className="loading">Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  if (!category) {
+    category = 'All Products';
+  }
+
   return (
     <>
-      <h2>Products</h2>
+      <h2>{category}</h2>
       <div className="products">
         {products.map((product) => (
           <Card

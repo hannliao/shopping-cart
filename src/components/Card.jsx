@@ -5,9 +5,11 @@ const Card = ({ imgSrc, title, price }) => {
     <div className="card">
       <img src={imgSrc} alt="" />
       <div className="info">
-        <p>{title}</p>
+        <div className="title">{title}</div>
         <p>${price}</p>
       </div>
+
+      <button className="add">Add to bag</button>
     </div>
   );
 };

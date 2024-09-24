@@ -8,14 +8,46 @@ const Navbar = () => {
         <p>free shipping on all orders $150+</p>
       </div>
       <nav>
-        <Link to="/">
-          <h1>basic basics</h1>
-        </Link>
-        <Link to="/shop">shop</Link>
-        <ul>
-          <li>search</li>
-          <li>user</li>
-          <li>cart</li>
+        <div className="header">
+          <Link to="/">
+            <h1>basic basics</h1>
+          </Link>
+
+          <ul className="icons">
+            <li>
+              <button>
+                <img src="/search-outline.svg" alt="" />
+              </button>
+            </li>
+            <li>
+              <button>
+                <img src="/person-outline.svg" alt="" />
+              </button>
+            </li>
+            <li>
+              <button>
+                <img src="/cart-outline.svg" alt="" />
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <ul className="shop">
+          <li>
+            <Link to="/collections">Shop All</Link>
+          </li>
+          <li>
+            <Link to="/collections/women">Women</Link>
+          </li>
+          <li>
+            <Link to="/collections/men">Men</Link>
+          </li>
+          <li>
+            <Link to="/collections/accessories">Accessories</Link>
+          </li>
+          <li>
+            <Link to="/collections/shoes">Shoes</Link>
+          </li>
         </ul>
       </nav>
     </>

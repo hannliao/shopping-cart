@@ -35,7 +35,7 @@ li {
 
 button {
   border: none;
-  /* font-size: 1em; */
+  background-color: transparent;
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;

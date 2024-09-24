@@ -1,10 +1,7 @@
 .card {
   width: 300px;
   height: 400px;
-  margin: 20px;
-  padding: 5px;
-  border-radius: 5px;
-  box-shadow: 4px 4px 8px lightgray;
+  margin: 30px;
 }
 
 .card img {
@@ -13,8 +10,20 @@
 }
 
 .info {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 500;
-  padding: 0 25px;
+  text-align: start;
+  font-size: 14px;
+}
+
+.info p {
+  color: gray;
+}
+
+.add {
+  border: 1px solid black;
+  width: 100%;
+  padding: 15px;
+  margin-top: 5px;
+}
+.add:hover {
+  background-color: #eee;
 }
