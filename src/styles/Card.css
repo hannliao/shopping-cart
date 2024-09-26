@@ -3,6 +3,9 @@
   height: 400px;
   margin: 30px;
 }
+.card:hover {
+  cursor: pointer;
+}
 
 .card img {
   max-width: 100%;

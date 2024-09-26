@@ -6,8 +6,17 @@ const Product = () => {
   const { collectionTag, productSlug } = useParams();
   const { products, loading, error } = useProducts(collectionTag);
 
+  if (loading) {
+    return <div className="loading">Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  const product = products?.find((product) => product.slug === productSlug);
   let sizes;
-  switch (collectionTag) {
+  switch (product.collection) {
     case 'women':
     case 'men':
       sizes = ['XS', 'S', 'M', 'L', 'XL'];
@@ -18,16 +27,6 @@ const Product = () => {
     default:
       sizes = ['ONE SIZE'];
   }
-
-  if (loading) {
-    return <div className="loading">Loading...</div>;
-  }
-
-  if (error) {
-    return <div>{error}</div>;
-  }
-
-  const product = products?.find((product) => product.slug === productSlug);
 
   return (
     <div className="product">

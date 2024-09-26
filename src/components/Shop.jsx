@@ -1,10 +1,11 @@
 import Card from './Card.jsx';
 import useProducts from './useProducts';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const Shop = () => {
   const { collectionTag } = useParams();
   const { products, loading, error } = useProducts(collectionTag);
+  const navigate = useNavigate();
 
   if (loading) {
     return <div className="loading">Loading...</div>;
@@ -32,6 +33,10 @@ const Shop = () => {
       category = 'All Products';
   }
 
+  const handleCardClick = (productSlug) => {
+    navigate(`/collections/${collectionTag}/products/${productSlug}`);
+  };
+
   return (
     <>
       <h2>{category}</h2>
@@ -42,7 +47,7 @@ const Shop = () => {
             imgSrc={product.imgSrc}
             title={product.title}
             price={product.price}
-            slug={product.slug}
+            onClick={() => handleCardClick(product.slug)}
           />
         ))}
       </div>

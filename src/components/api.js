@@ -1,3 +1,5 @@
+import collections from './collections';
+
 async function getProducts() {
   const request = await fetch(
     'https://mock.shop/api?query={products(first:%2020){edges%20{node%20{id%20title%20description%20featuredImage%20{id%20url}%20variants(first:%203){edges%20{node%20{price%20{amount%20currencyCode}}}}}}}}'
@@ -19,6 +21,16 @@ async function getProducts() {
     const price = Math.round(product.variants.edges[0].node.price.amount);
     const slug = slugify(title);
 
+    let collection = collections.women.includes(title)
+      ? 'women'
+      : collections.men.includes(title)
+      ? 'men'
+      : collections.accessories.includes(title)
+      ? 'accessories'
+      : collections.shoes.includes(title)
+      ? 'shoes'
+      : 'all-products';
+
     const productInfo = {
       id,
       title,
@@ -26,6 +38,7 @@ async function getProducts() {
       imgSrc,
       price,
       slug,
+      collection,
     };
 
     products.push(productInfo);
