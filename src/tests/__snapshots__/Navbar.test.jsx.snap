@@ -1,0 +1,93 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`navbar > renders navbar 1`] = `
+<div>
+  <div
+    class="banner"
+  >
+    <p>
+      free shipping on all orders $150+
+    </p>
+  </div>
+  <nav>
+    <div
+      class="header"
+    >
+      <a
+        href="/"
+      >
+        <h1>
+          basic basics
+        </h1>
+      </a>
+      <ul
+        class="icons"
+      >
+        <li>
+          <button>
+            <img
+              alt=""
+              src="/search-outline.svg"
+            />
+          </button>
+        </li>
+        <li>
+          <button>
+            <img
+              alt=""
+              src="/person-outline.svg"
+            />
+          </button>
+        </li>
+        <li>
+          <button>
+            <img
+              alt=""
+              src="/cart-outline.svg"
+            />
+          </button>
+        </li>
+      </ul>
+    </div>
+    <ul
+      class="shop"
+    >
+      <li>
+        <a
+          href="/collections/all-products"
+        >
+          Shop All
+        </a>
+      </li>
+      <li>
+        <a
+          href="/collections/women"
+        >
+          Women
+        </a>
+      </li>
+      <li>
+        <a
+          href="/collections/men"
+        >
+          Men
+        </a>
+      </li>
+      <li>
+        <a
+          href="/collections/accessories"
+        >
+          Accessories
+        </a>
+      </li>
+      <li>
+        <a
+          href="/collections/shoes"
+        >
+          Shoes
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
