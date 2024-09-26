@@ -17,6 +17,7 @@ async function getProducts() {
     const description = product.description;
     const imgSrc = product.featuredImage.url;
     const price = Math.round(product.variants.edges[0].node.price.amount);
+    const slug = slugify(title);
 
     const productInfo = {
       id,
@@ -24,12 +25,20 @@ async function getProducts() {
       description,
       imgSrc,
       price,
+      slug,
     };
 
     products.push(productInfo);
   });
 
   return products;
+}
+
+function slugify(title) {
+  return title
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '') // remove non-aplhanumeric characters
+    .replace(/\s+/g, '-'); // replace spaces with hyphens
 }
 
 export default getProducts;

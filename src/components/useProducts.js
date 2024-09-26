@@ -1,8 +1,27 @@
 import { useState, useEffect } from 'react';
 import getProducts from './api.js';
+import collections from './collections.js';
 
-const useProducts = (filterList) => {
-  const [products, setProducts] = useState(null);
+const useProducts = (collectionTag) => {
+  let collection;
+  switch (collectionTag) {
+    case 'women':
+      collection = collections.women;
+      break;
+    case 'men':
+      collection = collections.men;
+      break;
+    case 'accessories':
+      collection = collections.accessories;
+      break;
+    case 'shoes':
+      collection = collections.shoes;
+      break;
+    default:
+      collection = null;
+  }
+
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -11,10 +30,10 @@ const useProducts = (filterList) => {
       try {
         setLoading(true);
         const fetchedProducts = await getProducts();
-        if (filterList) {
+        if (collection) {
           setProducts(
             fetchedProducts.filter((product) =>
-              filterList.includes(product.title)
+              collection.includes(product.title)
             )
           );
         } else {
@@ -27,7 +46,7 @@ const useProducts = (filterList) => {
       }
     };
     fetchProducts();
-  }, [filterList]);
+  }, [collection]);
 
   return { products, loading, error };
 };

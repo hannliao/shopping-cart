@@ -25,5 +25,5 @@
   margin-top: 5px;
 }
 .add:hover {
-  background-color: #eee;
+  background-color: var(--lightgray);
 }

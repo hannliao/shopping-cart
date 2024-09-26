@@ -1,5 +1,6 @@
 :root {
-  --footer: #eee;
+  --lightgray: #eee;
+  --border: #ddd;
   --banner: rgb(182, 195, 221);
   --navy: rgb(20, 51, 107);
 }

@@ -1,8 +1,10 @@
 import Card from './Card.jsx';
 import useProducts from './useProducts';
+import { useParams } from 'react-router-dom';
 
-const Shop = ({ filterList, category }) => {
-  const { products, loading, error } = useProducts(filterList);
+const Shop = () => {
+  const { collectionTag } = useParams();
+  const { products, loading, error } = useProducts(collectionTag);
 
   if (loading) {
     return <div className="loading">Loading...</div>;
@@ -12,8 +14,22 @@ const Shop = ({ filterList, category }) => {
     return <div>{error}</div>;
   }
 
-  if (!category) {
-    category = 'All Products';
+  let category;
+  switch (collectionTag) {
+    case 'women':
+      category = "Women's Clothing";
+      break;
+    case 'men':
+      category = "Men's Clothing";
+      break;
+    case 'accessories':
+      category = 'Accessories';
+      break;
+    case 'shoes':
+      category = 'Shoes';
+      break;
+    default:
+      category = 'All Products';
   }
 
   return (
@@ -26,6 +42,7 @@ const Shop = ({ filterList, category }) => {
             imgSrc={product.imgSrc}
             title={product.title}
             price={product.price}
+            slug={product.slug}
           />
         ))}
       </div>

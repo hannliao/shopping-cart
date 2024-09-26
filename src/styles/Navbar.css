@@ -32,8 +32,8 @@ nav {
   width: 100%;
   display: flex;
   justify-content: center;
-  border-top: 0.7px solid #ddd;
-  border-bottom: 0.7px solid #ddd;
+  border-top: 0.7px solid var(--border);
+  border-bottom: 0.7px solid var(--border);
   font-size: 0.8em;
 }
 
