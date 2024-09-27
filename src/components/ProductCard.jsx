@@ -1,6 +1,6 @@
-import '../styles/Card.css';
+import '../styles/ProductCard.css';
 
-const Card = ({ imgSrc, title, price, onClick }) => {
+const ProductCard = ({ imgSrc, title, price, onClick }) => {
   return (
     <div className="card" onClick={onClick}>
       <img src={imgSrc} alt={title} />
@@ -9,9 +9,9 @@ const Card = ({ imgSrc, title, price, onClick }) => {
         <p>${price}</p>
       </div>
 
-      <button className="add">Add to bag</button>
+      <button className="add">Add to cart</button>
     </div>
   );
 };
 
-export default Card;
+export default ProductCard;

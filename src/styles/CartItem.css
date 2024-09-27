@@ -1,0 +1,65 @@
+.item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 50px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.item img {
+  max-width: 200px;
+}
+
+.item-info {
+  min-width: 300px;
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-price {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.qty-remove {
+  display: flex;
+  justify-content: space-between;
+}
+
+.qty-container {
+  border: 1px solid var(--border);
+}
+
+.qty-container button {
+  font-size: 16px;
+  color: var(--darkgray);
+  width: 30px;
+  padding: 5px;
+}
+.qty-container button:hover {
+  background-color: var(--lightgray);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  font-size: 14px;
+  border: none;
+  width: 30px;
+  padding: 5px;
+  text-align: center;
+}
+input[type='number']:focus {
+  outline: none;
+}
+
+.remove:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}

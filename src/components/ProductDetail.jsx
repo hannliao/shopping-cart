@@ -1,10 +1,13 @@
 import { useParams } from 'react-router-dom';
+import { useContext } from 'react';
+import { ShopContext } from '../App';
 import useProducts from './useProducts';
-import '../styles/Product.css';
+import '../styles/ProductDetail.css';
 
-const Product = () => {
+const ProductDetail = () => {
   const { collectionTag, productSlug } = useParams();
   const { products, loading, error } = useProducts(collectionTag);
+  const { addToCart } = useContext(ShopContext);
 
   if (loading) {
     return <div className="loading">Loading...</div>;
@@ -40,10 +43,12 @@ const Product = () => {
             <button key={size}>{size}</button>
           ))}
         </div>
-        <button className="add">Add to cart</button>
+        <button className="add" onClick={() => addToCart(product)}>
+          Add to cart
+        </button>
       </div>
     </div>
   );
 };
 
-export default Product;
+export default ProductDetail;

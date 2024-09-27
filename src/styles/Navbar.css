@@ -18,6 +18,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 .header {
@@ -57,4 +58,16 @@ nav li {
 
 nav img {
   width: 25px;
+}
+
+.cart-count {
+  font-size: 12px;
+  font-weight: 500;
+  width: 20px;
+  position: relative;
+  left: 12px;
+  bottom: 38px;
+  border-radius: 25px;
+  background-color: darkred;
+  color: white;
 }

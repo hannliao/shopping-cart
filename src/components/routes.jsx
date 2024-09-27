@@ -2,7 +2,8 @@ import App from '../App';
 import ErrorPage from './ErrorPage';
 import Home from './Home';
 import Shop from './Shop';
-import Product from './Product';
+import ProductDetail from './ProductDetail';
+import Cart from './Cart';
 
 const routes = [
   {
@@ -18,9 +19,13 @@ const routes = [
           { path: ':collectionTag', element: <Shop /> },
           {
             path: ':collectionTag/products/:productSlug',
-            element: <Product />,
+            element: <ProductDetail />,
           },
         ],
+      },
+      {
+        path: 'cart',
+        element: <Cart />,
       },
     ],
   },

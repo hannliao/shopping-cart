@@ -30,6 +30,9 @@ input[type='email']:focus {
   color: white;
   padding: 10px 20px;
 }
+.signup button:hover {
+  background-color: var(--navy-hover);
+}
 
 .copyright {
   font-size: 0.7em;

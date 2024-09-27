@@ -1,9 +1,13 @@
 import '../styles/Navbar.css';
+import { useContext } from 'react';
+import { ShopContext } from '../App';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+  const { cartItems } = useContext(ShopContext);
+
   return (
-    <>
+    <header>
       <div className="banner">
         <p>free shipping on all orders $150+</p>
       </div>
@@ -25,9 +29,12 @@ const Navbar = () => {
               </button>
             </li>
             <li>
-              <button>
+              <Link to="/cart">
                 <img src="/cart-outline.svg" alt="" />
-              </button>
+                <div className="cart-count">
+                  {cartItems.length > 0 ? cartItems.length : ''}
+                </div>
+              </Link>
             </li>
           </ul>
         </div>
@@ -50,7 +57,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-    </>
+    </header>
   );
 };
 

@@ -1,4 +1,4 @@
-import Card from './Card.jsx';
+import ProductCard from './ProductCard.jsx';
 import useProducts from './useProducts';
 import { useParams, useNavigate } from 'react-router-dom';
 
@@ -39,10 +39,10 @@ const Shop = () => {
 
   return (
     <>
-      <h2>{category}</h2>
+      <h2 className="category">{category}</h2>
       <div className="products">
         {products.map((product) => (
-          <Card
+          <ProductCard
             key={product.id}
             imgSrc={product.imgSrc}
             title={product.title}
