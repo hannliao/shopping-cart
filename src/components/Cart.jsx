@@ -5,9 +5,13 @@ import CartItem from './CartItem';
 import '../styles/Cart.css';
 
 const Cart = () => {
-  const { cartItems, setCartItems } = useContext(ShopContext);
-
+  const { cartItems, setCartItems, cartCount, setCartCount } =
+    useContext(ShopContext);
   const [subtotal, setSubtotal] = useState(0);
+
+  useEffect(() => {
+    setCartCount(cartItems.reduce((sum, cartItem) => sum + cartItem.qty, 0));
+  }, [cartItems]);
 
   useEffect(() => {
     setSubtotal(
@@ -77,7 +81,7 @@ const Cart = () => {
             </div>
             <div className="checkout">
               <div className="subtotal">
-                <p>Subtotal ({cartItems.length} items)</p>
+                <p>Subtotal ({cartCount} items)</p>
                 <p>${subtotal}</p>
               </div>
               <p className="shipping-taxes">

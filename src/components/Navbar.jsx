@@ -4,7 +4,7 @@ import { ShopContext } from '../App';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const { cartItems } = useContext(ShopContext);
+  const { cartCount } = useContext(ShopContext);
 
   return (
     <header>
@@ -19,22 +19,20 @@ const Navbar = () => {
 
           <ul className="icons">
             <li>
-              <button>
+              <a>
                 <img src="/search-outline.svg" alt="" />
-              </button>
+              </a>
             </li>
             <li>
-              <button>
+              <a>
                 <img src="/person-outline.svg" alt="" />
-              </button>
+              </a>
             </li>
             <li>
               <Link to="/cart">
                 <img src="/cart-outline.svg" alt="" />
-                <div className="cart-count">
-                  {cartItems.length > 0 ? cartItems.length : ''}
-                </div>
               </Link>
+              {cartCount > 0 && <div className="cart-count">{cartCount}</div>}
             </li>
           </ul>
         </div>

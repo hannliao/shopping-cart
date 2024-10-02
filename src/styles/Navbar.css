@@ -25,7 +25,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 1em;
+  padding-top: 0.8em;
 }
 
 .shop {
@@ -45,9 +45,14 @@ nav {
 
 nav ul {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.2em 1.1em;
 }
 
@@ -56,18 +61,28 @@ nav li {
   right: 50px;
 }
 
-nav img {
+.icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons img {
   width: 25px;
 }
 
 .cart-count {
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 11px;
+  font-weight: 600;
   width: 20px;
-  position: relative;
-  left: 12px;
-  bottom: 38px;
-  border-radius: 25px;
-  background-color: darkred;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 5px;
+  bottom: 17px;
+  border-radius: 10px;
+  background-color: #c00;
   color: white;
 }
