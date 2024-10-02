@@ -1,11 +1,58 @@
-import { useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { ShopContext } from '../App';
 import { Link } from 'react-router-dom';
 import CartItem from './CartItem';
 import '../styles/Cart.css';
 
 const Cart = () => {
-  const { cartItems } = useContext(ShopContext);
+  const { cartItems, setCartItems } = useContext(ShopContext);
+
+  const [subtotal, setSubtotal] = useState(0);
+
+  useEffect(() => {
+    setSubtotal(
+      cartItems.reduce(
+        (sum, cartItem) => sum + cartItem.qty * cartItem.price,
+        0
+      )
+    );
+  }, [cartItems]);
+
+  const checkout = () => {
+    alert("You've successfully checked out!");
+  };
+
+  function incrementQty(title) {
+    setCartItems(
+      cartItems.map((item) =>
+        item.title === title ? { ...item, qty: item.qty + 1 } : item
+      )
+    );
+  }
+
+  function decrementQty(title) {
+    setCartItems(
+      cartItems
+        .map((item) =>
+          item.title === title && item.qty > 0
+            ? { ...item, qty: item.qty - 1 }
+            : item
+        )
+        .filter((item) => !(item.title === title && item.qty === 0))
+    );
+  }
+
+  function handleQtyChange(e, title) {
+    setCartItems(
+      cartItems.map((item) =>
+        item.title === title ? { ...item, qty: Number(e.target.value) } : item
+      )
+    );
+  }
+
+  function removeItem(title) {
+    setCartItems(cartItems.filter((item) => item.title !== title));
+  }
 
   return (
     <div className="cart">
@@ -20,21 +67,23 @@ const Cart = () => {
                   imgSrc={cartItem.imgSrc}
                   title={cartItem.title}
                   price={cartItem.price}
+                  qty={cartItem.qty}
+                  incrementQty={() => incrementQty(cartItem.title)}
+                  decrementQty={() => decrementQty(cartItem.title)}
+                  handleQtyChange={handleQtyChange}
+                  removeItem={() => removeItem(cartItem.title)}
                 />
               ))}
             </div>
             <div className="checkout">
               <div className="subtotal">
-                <p>Subtotal</p>
-                <p>
-                  $
-                  {cartItems.reduce((sum, cartItem) => sum + cartItem.price, 0)}
-                </p>
+                <p>Subtotal ({cartItems.length} items)</p>
+                <p>${subtotal}</p>
               </div>
               <p className="shipping-taxes">
                 Shipping & taxes calculated at checkout
               </p>
-              <button>Checkout</button>
+              <button onClick={checkout}>Checkout</button>
             </div>
           </>
         ) : (

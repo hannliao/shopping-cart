@@ -2,8 +2,9 @@
   display: grid;
   grid-template-columns: 200px 1fr;
   gap: 50px;
+  padding: 20px;
   width: 100%;
-  margin-bottom: 50px;
+  border-top: 1px solid var(--border);
 }
 
 .item img {
@@ -21,11 +22,13 @@
   flex: 1;
   display: flex;
   justify-content: space-between;
+  padding-top: 30px;
 }
 
 .qty-remove {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 30px;
 }
 
 .qty-container {

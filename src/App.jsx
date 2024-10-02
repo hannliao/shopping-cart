@@ -15,11 +15,21 @@ export default function App() {
   const [cartItems, setCartItems] = useState([]);
   const products = useProducts();
   const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
+    if (cartItems.includes(product)) {
+      setCartItems(
+        cartItems.map((item) =>
+          item.id === product.id ? { ...item, qty: item.qty + 1 } : item
+        )
+      );
+    } else {
+      setCartItems([...cartItems, { ...product, qty: 1 }]);
+    }
   };
 
   return (
-    <ShopContext.Provider value={{ cartItems, products, addToCart }}>
+    <ShopContext.Provider
+      value={{ cartItems, setCartItems, products, addToCart }}
+    >
       <div className="app">
         <Navbar />
         <Outlet />

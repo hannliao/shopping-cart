@@ -1,6 +1,15 @@
 import '../styles/CartItem.css';
 
-const CartItem = ({ imgSrc, title, price }) => {
+const CartItem = ({
+  imgSrc,
+  title,
+  price,
+  qty,
+  incrementQty,
+  decrementQty,
+  handleQtyChange,
+  removeItem,
+}) => {
   return (
     <div className="item">
       <img src={imgSrc} alt={title} />
@@ -11,11 +20,20 @@ const CartItem = ({ imgSrc, title, price }) => {
         </div>
         <div className="qty-remove">
           <div className="qty-container">
-            <button>&minus;</button>
-            <input type="number" id="qty" min="0" max="20" value="1" />
-            <button>+</button>
+            <button onClick={decrementQty}>&minus;</button>
+            <input
+              type="number"
+              id="qty"
+              min="0"
+              max="20"
+              value={qty}
+              onChange={(e) => handleQtyChange(e, title)}
+            />
+            <button onClick={incrementQty}>+</button>
           </div>
-          <button className="remove">Remove</button>
+          <button className="remove" onClick={removeItem}>
+            Remove
+          </button>
         </div>
       </div>
     </div>
