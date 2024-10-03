@@ -1,6 +1,6 @@
-import ProductCard from './ProductCard.jsx';
-import useProducts from './useProducts';
 import { useParams, useNavigate } from 'react-router-dom';
+import useProducts from '../scripts/useProducts';
+import ProductCard from './ProductCard.jsx';
 
 const Shop = () => {
   const { collectionTag } = useParams();

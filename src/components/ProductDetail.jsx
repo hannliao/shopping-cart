@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { ShopContext } from '../App';
-import useProducts from './useProducts';
+import useProducts from '../scripts/useProducts';
 import '../styles/ProductDetail.css';
 
 const ProductDetail = () => {

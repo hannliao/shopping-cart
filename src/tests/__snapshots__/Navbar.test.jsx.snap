@@ -2,92 +2,96 @@
 
 exports[`navbar > renders navbar 1`] = `
 <div>
-  <div
-    class="banner"
-  >
-    <p>
-      free shipping on all orders $150+
-    </p>
-  </div>
-  <nav>
+  <header>
     <div
-      class="header"
+      class="banner"
     >
-      <a
-        href="/"
+      <p>
+        free shipping on all orders $150+
+      </p>
+    </div>
+    <nav>
+      <div
+        class="header"
       >
-        <h1>
-          basic basics
-        </h1>
-      </a>
+        <a
+          href="/"
+        >
+          <h1>
+            basic basics
+          </h1>
+        </a>
+        <ul
+          class="icons"
+        >
+          <li>
+            <a>
+              <img
+                alt=""
+                src="/search-outline.svg"
+              />
+            </a>
+          </li>
+          <li>
+            <a>
+              <img
+                alt=""
+                src="/person-outline.svg"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="/cart"
+            >
+              <img
+                alt=""
+                src="/cart-outline.svg"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
       <ul
-        class="icons"
+        class="shop"
       >
         <li>
-          <button>
-            <img
-              alt=""
-              src="/search-outline.svg"
-            />
-          </button>
+          <a
+            href="/collections/all-products"
+          >
+            Shop All
+          </a>
         </li>
         <li>
-          <button>
-            <img
-              alt=""
-              src="/person-outline.svg"
-            />
-          </button>
+          <a
+            href="/collections/women"
+          >
+            Women
+          </a>
         </li>
         <li>
-          <button>
-            <img
-              alt=""
-              src="/cart-outline.svg"
-            />
-          </button>
+          <a
+            href="/collections/men"
+          >
+            Men
+          </a>
+        </li>
+        <li>
+          <a
+            href="/collections/accessories"
+          >
+            Accessories
+          </a>
+        </li>
+        <li>
+          <a
+            href="/collections/shoes"
+          >
+            Shoes
+          </a>
         </li>
       </ul>
-    </div>
-    <ul
-      class="shop"
-    >
-      <li>
-        <a
-          href="/collections/all-products"
-        >
-          Shop All
-        </a>
-      </li>
-      <li>
-        <a
-          href="/collections/women"
-        >
-          Women
-        </a>
-      </li>
-      <li>
-        <a
-          href="/collections/men"
-        >
-          Men
-        </a>
-      </li>
-      <li>
-        <a
-          href="/collections/accessories"
-        >
-          Accessories
-        </a>
-      </li>
-      <li>
-        <a
-          href="/collections/shoes"
-        >
-          Shoes
-        </a>
-      </li>
-    </ul>
-  </nav>
+    </nav>
+  </header>
 </div>
 `;

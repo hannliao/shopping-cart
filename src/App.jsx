@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { useState, createContext } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import useProducts from './components/useProducts';
+import useProducts from './scripts/useProducts';
 import './styles/App.css';
 
 export const ShopContext = createContext({

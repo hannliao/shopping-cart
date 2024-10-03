@@ -93,9 +93,9 @@ const Cart = () => {
         ) : (
           <div className="empty-cart">
             <p>Your cart is empty.</p>
-            <button>
-              <Link to="/collections/all-products">Continue Shopping</Link>
-            </button>
+            <Link to="/collections/all-products">
+              <button>Continue Shopping</button>
+            </Link>
           </div>
         )}
       </div>
