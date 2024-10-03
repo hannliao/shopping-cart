@@ -25,7 +25,6 @@ const CartItem = ({
               type="number"
               id="qty"
               min="0"
-              max="20"
               value={qty}
               onChange={(e) => handleQtyChange(e, title)}
             />
