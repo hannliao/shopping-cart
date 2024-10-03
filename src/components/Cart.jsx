@@ -47,9 +47,13 @@ const Cart = () => {
   }
 
   function handleQtyChange(e, title) {
+    let value = parseInt(e.target.value);
+    if (isNaN(value)) value = 1;
+    if (value > 99) value = 99;
+
     setCartItems(
       cartItems.map((item) =>
-        item.title === title ? { ...item, qty: Number(e.target.value) } : item
+        item.title === title ? { ...item, qty: value } : item
       )
     );
   }

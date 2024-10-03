@@ -10,5 +10,5 @@
 .add.added {
   background-color: rgb(14, 92, 58);
   color: white;
-  transition: color, background-color 0.25s ease-in 0.1s;
+  transition: color, background-color 0.2s ease-in 0.1s;
 }
