@@ -1,0 +1,14 @@
+.add {
+  border: 1px solid black;
+  width: 100%;
+  padding: 15px;
+  margin-top: 5px;
+}
+.add:hover {
+  background-color: var(--lightgray);
+}
+.add.added {
+  background-color: rgb(14, 92, 58);
+  color: white;
+  transition: color, background-color 0.25s ease-in 0.1s;
+}

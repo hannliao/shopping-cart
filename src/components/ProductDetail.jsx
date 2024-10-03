@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { ShopContext } from '../App';
 import useProducts from '../scripts/useProducts';
+import AddToCartButton from './AddToCartButton';
 import '../styles/ProductDetail.css';
 
 const ProductDetail = () => {
@@ -43,9 +44,7 @@ const ProductDetail = () => {
             <button key={size}>{size}</button>
           ))}
         </div>
-        <button className="add" onClick={() => addToCart(product)}>
-          Add to cart
-        </button>
+        <AddToCartButton addToCart={() => addToCart(product)} />
       </div>
     </div>
   );

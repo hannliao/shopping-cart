@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { ShopContext } from '../App';
 import useProducts from '../scripts/useProducts';
+import AddToCartButton from './AddToCartButton';
 import '../styles/ProductCard.css';
 
 const ProductCard = ({ imgSrc, title, price, onClick }) => {
@@ -18,9 +19,7 @@ const ProductCard = ({ imgSrc, title, price, onClick }) => {
           <p>${price}</p>
         </div>
       </div>
-      <button className="add" onClick={() => addToCart(product)}>
-        Add to cart
-      </button>
+      <AddToCartButton addToCart={() => addToCart(product)} />
     </div>
   );
 };
