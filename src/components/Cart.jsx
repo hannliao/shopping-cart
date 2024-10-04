@@ -22,10 +22,6 @@ const Cart = () => {
     );
   }, [cartItems]);
 
-  const checkout = () => {
-    alert("You've successfully checked out!");
-  };
-
   function incrementQty(title) {
     setCartItems(
       cartItems.map((item) =>
@@ -91,14 +87,16 @@ const Cart = () => {
               <p className="shipping-taxes">
                 Shipping & taxes calculated at checkout
               </p>
-              <button onClick={checkout}>Checkout</button>
+              <Link to="/order-confirmation">
+                <button>Checkout</button>
+              </Link>
             </div>
           </>
         ) : (
           <div className="empty-cart">
             <p>Your cart is empty.</p>
             <Link to="/collections/all-products">
-              <button>Continue Shopping</button>
+              <button className="continue-shopping">Continue Shopping</button>
             </Link>
           </div>
         )}

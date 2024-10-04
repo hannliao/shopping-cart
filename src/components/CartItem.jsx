@@ -34,6 +34,7 @@ const CartItem = ({
             Remove
           </button>
         </div>
+        <div className="order-item-qty">QTY: {qty}</div>
       </div>
     </div>
   );

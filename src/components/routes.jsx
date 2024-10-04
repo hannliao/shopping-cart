@@ -4,6 +4,7 @@ import Home from './Home';
 import Shop from './Shop';
 import ProductDetail from './ProductDetail';
 import Cart from './Cart';
+import OrderConfirmation from './OrderConfirmation';
 
 const routes = [
   {
@@ -26,6 +27,10 @@ const routes = [
       {
         path: 'cart',
         element: <Cart />,
+      },
+      {
+        path: 'order-confirmation',
+        element: <OrderConfirmation />,
       },
     ],
   },
