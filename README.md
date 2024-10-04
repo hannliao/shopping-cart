@@ -1,8 +1,32 @@
-# React + Vite
+# shopping-cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
 
-Currently, two official plugins are available:
+- Navigation bar on every page routes to:
+  - Homepage
+  - Shopping (filtered by All Products, Women, Men, Accessories, Shoes)
+  - Cart
+- Click on products to see product details
+- Add products to cart
+- View cart and adjust quantities of items
+- Checkout and view order confirmation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Built with
+
+- React
+  - hooks used
+    - useState
+    - useEffect
+    - useContext
+    - useParams
+    - useNavigate
+    - custom: useProducts
+  - React Router
+  - React Testing Library
+- Vite
+- JavaScript
+- HTML/CSS
+- [Mock Shop API](https://mock.shop/)
+
+This project was completed as an assignment from The Odin Project.  
+Date completed: 10/04/24
